@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>要件定義テスト（ボタン＋ホバー表示）</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.8;
+      padding: 2em;
+    }
+
+    .answer {
+      color: transparent;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      cursor: help;
+    }
+
+    .answer:hover {
+      color: red;
+    }
+
+    .show-answers .answer {
+      color: red;
+    }
+
+    .question-line {
+      margin-bottom: 1em;
+    }
+
+    button {
+      margin-bottom: 1.5em;
+      padding: 0.5em 1em;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>要件定義テスト（ボタンで表示／ホバーでも確認）</h2>
+
+<button onclick="toggleAnswers()">回答を表示</button>
+
+<div id="questions">
+  <div class="question-line">要求から要件を絞り込むとき、<span class="answer">【合理的】</span>な判断が必要。</div>
+  <div class="question-line">要求分析では<span class="answer">【潜在】</span>的な要求や<span class="answer">【暗黙】</span>の要求を掘り起こす。</div>
+  <div class="question-line">要求を引き出すため、<span class="answer">【高い】</span>コミュニケーション能力が必要。</div>
+  <div class="question-line">要件定義はシステム構築の<span class="answer">【早い】</span>段階で行われ、要求は<span class="answer">【曖昧】</span>。</div>
+  <div class="question-line">手探り状態の中でも、<span class="answer">【正確】</span>で<span class="answer">【抜け漏れ】</span>のない定義が求められる。</div>
+  <div class="question-line">ビジネス<span class="answer">【動向】</span>を先読みし、<span class="answer">【柔軟】</span>に対処できる仕組みの定義が必要。</div>
+  <div class="question-line">要件定義は、ユーザーと<span class="answer">【ベンダー】</span>が<span class="answer">【協働】</span>で取り組む作業。</div>
+  <div class="question-line">要件定義は、ユーザーが<span class="answer">【主体】</span>、ベンダーは<span class="answer">【支援者】</span>の位置づけ。</div>
+  <div class="question-line">ベンダーが<span class="answer">【ガイド】</span>役となって要件定義を<span class="answer">【リード】</span>する。</div>
+  <div class="question-line">要件定義完了時点で、システム<span class="answer">【規模】</span>が見積れる情報が揃う。</div>
+  <div class="question-line">要件定義完了時点で、<span class="answer">【設計】</span>工程に着手できる情報が揃う。</div>
+  <div class="question-line">要件定義着手前に、やるべきこと、<span class="answer">【スケジュール】</span>、<span class="answer">【役割分担】</span>を決めておく。</div>
+  <div class="question-line">「会議」は、できるだけ<span class="answer">【早く】</span>段取りし、関係者に<span class="answer">【共有】</span>する。</div>
+  <div class="question-line">会議の参加者への通知や、場所や備品の予約など<span class="answer">【後回し】</span>にしない。</div>
+  <div class="question-line">優先順位付けの判定は、予め決めておいた<span class="answer">【判断軸】</span>や<span class="answer">【MOSCOW】</span>を使う。</div>
+  <div class="question-line">作業の開始と終了の判定は、<span class="answer">【曖昧さ】</span>を残さぬよう関係者に<span class="answer">【周知】</span>しておく。</div>
+  <div class="question-line">合意と承認の判定は、<span class="answer">【合理的】</span>に決定し納得度が高まるよう予め<span class="answer">【基準】</span>を設けておく。</div>
+  <div class="question-line">新業務のありたい姿を<span class="answer">【可視化】</span>する。</div>
+  <div class="question-line">新業務実現に必要な仕組みを、業務の<span class="answer">【組み立て】</span>、<span class="answer">【ルール】</span>、<span class="answer">【入出力情報】</span>に分けて整理する。</div>
+  <div class="question-line">入出力情報分析で、管理が必要な情報を<span class="answer">【識別】</span>し、<span class="answer">【グループ化】</span>して一覧表に整理する。</div>
+  <div class="question-line">情報のグループ間の<span class="answer">【依存関係】</span>や<span class="answer">【主従】</span>関係などを分析する。</div>
+  <div class="question-line">分析<span class="answer">【ER図】</span>をユーザーとのコミュニケーションに使う。</div>
+  <div class="question-line">業務の<span class="answer">【組み立て】</span>、<span class="answer">【統制】</span>、<span class="answer">【入出力情報】</span>を一覧表にまとめる。</div>
+  <div class="question-line">業務要件を<span class="answer">【体系的】</span>に整理し、<span class="answer">【階層】</span>ごとに<span class="answer">【網羅】</span>をチェックする。</div>
+  <div class="question-line">分析中にユーザーと取り決めたことを、業務要件<span class="answer">【定義書】</span>に<span class="answer">【文書化】</span>する。</div>
+  <div class="question-line">非機能要求とは、機能が提供するサービスの<span class="answer">【レベル】</span>や<span class="answer">【品質】</span>についての要求。</div>
+  <div class="question-line">IPAの『<span class="answer">【非機能要求グレード】</span>』とは、非機能要求の<span class="answer">【見える化】</span>と<span class="answer">【確認】</span>の手段を提供するためのガイド。</div>
+  <div class="question-line">ユーザーとの非機能機能要求<span class="answer">【インタビュー】</span>に『非機能要求グレード』を<span class="answer">【活用】</span>する。</div>
+</div>
+
+<script>
+  function toggleAnswers() {
+    const questions = document.getElementById('questions');
+    const button = document.querySelector('button');
+    questions.classList.toggle('show-answers');
+    button.textContent = questions.classList.contains('show-answers') ? '回答を隠す' : '回答を表示';
+  }
+</script>
+
+</body>
+</html>
